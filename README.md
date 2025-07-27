@@ -1,128 +1,110 @@
-1. Project Title
-City Pulse: Multilingual Voice Agent MVP
- 2. Objective
-To develop a minimal viable product (MVP) of a multilingual voice agent that allows users to speak in any supported language and receive spoken responses powered by OpenAI and Google Cloud APIs.
-The goal is to enable a natural voice-based interaction that is language-agnostic, simple to use, and easily extendable.
+# 🌆 City Pulse – Multilingual Voice Agent MVP
 
-3. Technologies Used
-Layer
-Technology
-Backend Server
-FastAPI (Python)
-Voice Recognition
-Google Cloud Speech-to-Text
-Voice Synthesis
-Google Cloud Text-to-Speech
-Language AI
-OpenAI GPT (text generation)
-Frontend
-HTML, JavaScript (Voice Recorder)
-Storage / Secrets
-.env, Git Ignore, Push Protection
-Hosting (local)
-Uvicorn development server
+City Pulse is a multilingual voice assistant MVP built using FastAPI and OpenAI, designed to provide conversational responses in multiple languages. The application accepts user input via voice, transcribes it, generates a reply using OpenAI, and responds via synthesized speech.
 
- 4. Functional Workflow
-User presses a button on the web interface to record speech.
+---
 
+## 🔗 Repository
 
-The browser captures audio and sends it to the backend (/chat-voice).
+GitHub: [CITY_PULSE_MULTILINGUAL](https://github.com/Jotthecode/CITY_PULSE_MULTILINGUAL)
 
+---
 
-Backend converts audio to text using Google Speech-to-Text.
+## ⚙️ Tech Stack
 
+- 🧠 OpenAI GPT for text generation
+- 🔊 Google Cloud Text-to-Speech & Speech-to-Text
+- 🌐 FastAPI as the backend server
+- 🎙️ HTML + JavaScript frontend with voice recording
+- 🐍 Python
 
-The resulting text is passed to OpenAI for natural language generation.
+---
 
+## 🛠️ Setup Instructions
 
-OpenAI's reply is converted back into speech using Google Text-to-Speech.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Jotthecode/CITY_PULSE_MULTILINGUAL.git
+   cd CITY_PULSE_MULTILINGUAL
+Create and activate a virtual environment
 
-
-The audio response is returned and played in the browser.
-
-
-
- 5. MVP Feature Checklist
-Feature
-Status
-FastAPI backend for voice processing
-✅ Complete
-HTML + JS frontend with microphone support
-✅ Complete
-Speech-to-text via Google Cloud
-✅ Complete
-OpenAI GPT-based response
-✅ Complete
-Text-to-speech using Google Cloud TTS
-✅ Complete
-Audio response playback in browser
-✅ Complete
-Multilingual language support
-✅ Complete
-Secure handling of .env and credentials
-✅ Complete
-GitHub push protection configured
-✅ Complete
-Cleaned Git history (no secrets exposed)
-✅ Complete
-Project documentation + submission file
-✅ Complete
-
-
- 6. Repository Structure
 bash
-CopyEdit
-CITY_PULSE_MULTILINGUAL/
-├── app.py                    # FastAPI backend
-├── static/index.html        # Frontend UI
-├── requirements.txt         # Dependencies
-├── .env                     # Secrets (ignored)
-├── .gitignore               # Prevents secret leaks
-├── README.md                # Project overview
-├── CityPulse_Submission.md  # <== This document
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+Install dependencies
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Add environment variables
+
+Create a .env file:
+
+ini
+Copy
+Edit
+OPENAI_API_KEY=your_openai_api_key
+Set up Google Cloud credentials
+
+Create a service account in Google Cloud with access to Speech-to-Text and Text-to-Speech APIs.
+
+Download the service_account_key.json file and set an environment variable:
+
+bash
+Copy
+Edit
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/service_account_key.json"
+Run the application
+
+bash
+Copy
+Edit
+uvicorn app:app --reload
+Visit in browser
+
+bash
+Copy
+Edit
+http://localhost:8000/static/index.html
+✅ MVP Checklist
+Feature	Status
+FastAPI backend running	✅ Complete
+HTML frontend with voice recording	✅ Complete
+Audio upload via POST request	✅ Complete
+Google Speech-to-Text integration	✅ Complete
+Multilingual language support	✅ Complete
+OpenAI GPT response generation	✅ Complete
+Google Text-to-Speech response	✅ Complete
+Audio response played in browser	✅ Complete
+Environment variables via .env file	✅ Complete
+.gitignore for secrets and cache	✅ Complete
+Push protection & secret cleanup	✅ Fixed
+README documentation	✅ You're here!
+
+📁 File Structure
+bash
+Copy
+Edit
+city_pulse_mvp/
+├── app.py
+├── static/
+│   └── index.html
+├── service_account_key.json  # (ignored)
+├── requirements.txt
+├── .env                      # (ignored)
+├── .gitignore
+└── README.md
+🔐 Security Notes
+This project previously included a committed service_account_key.json file. It has been removed, and Git history has been cleaned. Ensure all future pushes exclude .env and secret key files.
+
+.env and service_account_key.json are now in .gitignore
+
+You can check GitHub's push protection page if needed.
+
+✨ Contributions
+PRs are welcome. Feel free to open issues or improvements on multilingual NLP, voice UIs, or AI integration.
 
 
-7. Security & GitHub Push Fixes
-Issue: GitHub rejected a push due to service_account_key.json being committed.
-
-
-Fix:
-
-
-Secrets removed from Git history.
-
-
-.gitignore updated to include .env and service_account_key.json.
-
-
-GitHub push protection now passes.
-
-
-Link: Push Protection Error Info
-
-
-
- 8. Demo Video
-https://github.com/Jotthecode/CITY_PULSE_MULTILINGUAL/blob/main/CITY_PULSE_MVP_VID.mp4
-
-
- 9. Future Scope (Optional)
-Deploy to cloud (e.g., Render, GCP)
-
-
-Add GUI controls for selecting language
-
-
-Multi-turn conversation history
-
-
-Add LLM context for location-aware queries
-
-
-Extend to mobile or kiosk interface
-
-
-
- 10. Submission Link
-GitHub Repository:
- 🔗 https://github.com/Jotthecode/CITY_PULSE_MULTILINGUAL
