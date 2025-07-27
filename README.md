@@ -19,6 +19,8 @@ GitHub: [CITY_PULSE_MULTILINGUAL](https://github.com/Jotthecode/CITY_PULSE_MULTI
 - 🐍 Python
 
 ---
+## Drive Link for Details 
+https://drive.google.com/drive/u/0/folders/11-ifP20XT_7bgA8pGY7mMVm-suQP6dy2
 
 ## 🛠️ Setup Instructions
 
